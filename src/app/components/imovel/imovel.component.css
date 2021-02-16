@@ -14,8 +14,6 @@
 .button{
   align-items: center;
   align-self: center;
-  max-height: 100px;
-  min-width: 400px;
   font-family:'minefont';
   color: white;
   background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
@@ -30,4 +28,9 @@
 }
 :active .button {
   box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
 }

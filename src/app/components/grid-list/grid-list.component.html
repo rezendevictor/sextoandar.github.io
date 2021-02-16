@@ -1,9 +1,10 @@
-<mat-grid-list cols="2" >
-    <mat-grid-tile class="tile"   *ngFor="let tile of hehe"> 
-        <imovel [name]=tile 
-        photoUrl="https://via.placeholder.com/150"
-        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum tortor vel tortor commodo rhoncus. Nunc eget ultricies dolor. Donec sed nulla id metus euismod condimentum. Donec maximus hendrerit ipsum, id eleifend odio scelerisque sed. Nam viverra congue ornare. Aenean commodo placerat sollicitudin. Aenean finibus viverra eros eu convallis. Proin erat dolor, rutrum non tortor hendrerit, imperdiet iaculis ante. Suspendisse faucibus nisl eget suscipit ullamcorper. Maecenas ut pretium nunc. Suspendisse potenti.'
-        adress = "Lorem ipsum"
-        ></imovel>
-</mat-grid-tile>
-</mat-grid-list>    
+<div class="row">
+  <imovel
+    class="col-sm-12 col-md-4 margin-card"
+    *ngFor="let tile of hehe"
+    [name]="tile"
+    photoUrl="https://via.placeholder.com/150"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum tortor vel tortor commodo rhoncus. Nunc eget ultricies dolor. Donec sed nulla id metus euismod condimentum. Donec maximus hendrerit ipsum, id eleifend odio scelerisque sed. Nam viverra congue ornare. Aenean commodo placerat sollicitudin. Aenean finibus viverra eros eu convallis. Proin erat dolor, rutrum non tortor hendrerit, imperdiet iaculis ante. Suspendisse faucibus nisl eget suscipit ullamcorper. Maecenas ut pretium nunc. Suspendisse potenti."
+    adress="Lorem ipsum"
+  ></imovel>
+</div>

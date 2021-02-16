@@ -1,6 +1,4 @@
-.tile{
-    min-width: 400px;
-    min-height: 400px;
-    max-width: 500px;
-    max-height: 500px;
+.margin-card {
+    margin-bottom: 2%;
 }
+

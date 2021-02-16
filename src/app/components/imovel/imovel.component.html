@@ -1,15 +1,17 @@
-    <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title class="title"><h3>{{name}}</h3></mat-card-title>
-          <mat-card-subtitle>{{adress}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="photoUrl" alt="Photo of House">
-        <mat-card-content class="description">
-          <p>
-              {{description}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button class="button" mat-button>MARCAR VISITA</button>
-    </mat-card-actions>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title class="title"
+      ><h3>{{ name }}</h3></mat-card-title
+    >
+    <mat-card-subtitle>{{ adress }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="photoUrl" alt="Photo of House" />
+  <mat-card-content class="description">
+    <p>
+      {{ description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="justify-content-center row">
+    <button class="col-8 button" mat-button>MARCAR VISITA</button>
+  </mat-card-actions>
 </mat-card>
