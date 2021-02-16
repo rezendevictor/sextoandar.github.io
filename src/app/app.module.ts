@@ -1,3 +1,4 @@
+import { VisitComponent } from './components/visit/visit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,6 +14,7 @@ import { GridListComponent } from './components/grid-list/grid-list.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { RegistrarComponent } from './components/registrar/registrar.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,10 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path: 'novoRegistro', component: RegistrarComponent},
+      {path: 'marcarVisita', component: VisitComponent},
+    ]),
     AppRoutingModule,
     MatGridListModule,
     MatCardModule,
