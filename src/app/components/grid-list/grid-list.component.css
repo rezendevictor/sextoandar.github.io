@@ -1,0 +1,6 @@
+.tile{
+    min-width: 400px;
+    min-height: 400px;
+    max-width: 500px;
+    max-height: 500px;
+}

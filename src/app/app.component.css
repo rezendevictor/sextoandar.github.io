@@ -1,4 +1,7 @@
 
-.container{
-    background-image: url(src\assets\images\background.png);
+.title{
+    font-family: "minefont";
+}
+.body{
+    margin:0px;
 }
