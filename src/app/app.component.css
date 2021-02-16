@@ -11,6 +11,7 @@
 .container{
     background-color: #000000;
     background-image: url(src\assets\images\bright-squares.png);
+	max-width: 100% !important;
 }
 
 .body{
