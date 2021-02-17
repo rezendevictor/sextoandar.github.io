@@ -1,102 +1,124 @@
-<div>
-<form class="formulario">
-  <h1>Cadastro de Imovel</h1>
-    <label for="adress">Endereço</label><br>
-    <input type="text" id="adress" name="fname"><br>
-    
-    
-    <label for="type">Tipo:</label><br>
-    <input type="radio" id="casa" name="type" value="casa">
-    <label for="casa"> Casa</label><br>
-    <input type="radio" id="apartamento" name="type" value="apartamento">
-    <label for="apartamento"> Apartamento</label><br>
-
-
-    <label for="description">Detalhes</label><br>
-    <input type="text" id="description" name="description"><br>
-    
-    <form>
-        <label for="quartos">Quantos Quartos?</label>
-        <select id="quartos" name="quartos">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
+<div class="formulario">
+  <h1 class="ml-3 mr-3">Cadastro de Imovel</h1>
+  <nav class="nav ml-3 mr-3 mt-2">
+    <ul>
+      <li><a>Casa</a></li>
+      <li><a>Apartameto</a></li>
+    </ul>
+  </nav>
+  <form class="row ml-3 mr-3 mt-3">
+    <label class="form-group col-12">Endereço</label>
+    <div class="row ml-2">
+      <div class="form-group col-sm-12 col-md-6">
+        <label for="street">Rua</label>
+        <input type="text" id="street" class="form-control" />
+      </div>
+      <div class="form-group col-sm-6 col-md-2">
+        <label for="number">Numero</label>
+        <input type="number" id="number" class="form-control" />
+      </div>
+      <div class="form-group col-sm-6 col-md-4">
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" class="form-control" />
+      </div>
+      <div class="form-group col-sm-12 col-md-6">
+        <label>Bairro</label>
+        <select id="neighborhood" name="neighborhood" class="form-control">
+          <option value="1">Bairro Zika 123</option>
+          <option value="2">Bairro Zika 123</option>
+          <option value="3">Bairro Zika 123</option>
+          <option value="4">Bairro Zika 123</option>
+          <option value="5">Bairro Zika 123</option>
+          <option value="6">Bairro Zika 123</option>
         </select>
-      </form>
-     <form>
-        <label for="quartos">Quantos Quartos?</label>
-        <select id="quartos" name="quartos">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="4">5</option>
-          <option value="4">6</option>
-        </select>
-      </form>
-      <form>
-        <label for="quartos">Quantos Quartos?</label>
-        <select id="quartos" name="quartos">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </form>
-      <form>
-        <label for="suites">Quantas Suites?</label>
-        <select id="suites" name="suites">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </form>
-      <form>
-        <label for="salas">Quantas Salas?</label>
-        <select id="salas" name="salas">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </form>
-  
+      </div>
+    </div>
 
-    <form>
-        <label for="vagas">Quantas Vagas?</label>
-        <select id="vagas" name="vagas">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-      </form>
-   
+    <div class="form-group col-3">
+      <label for="quartos">Quantos quartos?</label>
+      <select id="quartos" name="quartos" class="form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+    <div class="form-group col-3">
+      <label for="suites">Quantas suites?</label>
+      <select id="suites" name="suites" class="form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+    <div class="form-group col-3">
+      <label for="salas">Quantas salas?</label>
+      <select id="salas" name="salas" class="form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
 
-    <label for="armario">Possui Armario Imbutido?:</label><br>
-    <input type="radio" id="armarioSim" name="simArmario" value="sim">
-    <label for="casa"> Sim</label><br>
-    <input type="radio" id="armarioNao" name="naoArmario" value="nao">
-    <label for="apartamento"> Não</label><br>
-
-    <label for="rent">Qual o Valor do Aluguel?</label><br>
-    <input type="number" id="rent" name="rent"><br>
-    
-    <button mat-button class="btn_enviar">
-      Cadastrar
-    </button>
-
+    <div class="form-group col-3">
+      <label for="vagas">Quantas vagas na garagem?</label>
+      <select id="vagas" name="vagas" class="form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-12 col-md-6">
+      <label for="armario">Possui armario embutido?</label>
+      <div class="form-check">
+        <input
+          type="radio"
+          id="armarioSim"
+          name="simArmario"
+          value="true"
+          class="form-check-input"
+        />
+        <label for="casa" class="form-check-label"> Sim</label>
+      </div>
+      <div class="form-check">
+        <input
+          type="radio"
+          id="armarioNao"
+          name="naoArmario"
+          value="false"
+          class="form-check-input"
+        />
+        <label for="apartamento" class="form-check-label"> Não</label>
+      </div>
+    </div>
+    <div class="form-group col-sm-12 col-md-6">
+      <label for="rent">Qual o valor do aluguel?</label>
+      <input type="number" id="rent" name="rent" class="form-control" />
+    </div>
+    <div class="form-group col-12">
+      <label for="description">Detalhes</label>
+      <textarea
+        id="description"
+        name="description"
+        rows="4"
+        cols="50"
+        class="form-control"
+        placeholder="Digite detalhes adicionais"
+      ></textarea>
+    </div>
   </form>
+  <div class="row justify-content-center">
+    <button mat-button class="btn_enviar col-6">Cadastrar</button>
+  </div>
 </div>
