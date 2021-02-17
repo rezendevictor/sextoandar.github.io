@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -14,7 +14,6 @@ import { ImovelComponent } from './components/imovel/imovel.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { VisitComponent } from './components/visit/visit.component';
 import { AppRoutes } from './routes';
-import { ApartamentServices } from './services/apartament.services';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +35,7 @@ import { ApartamentServices } from './services/apartament.services';
     ReactiveFormsModule,
     MatCardModule,
   ],
-  providers: [ApartamentServices],
+  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

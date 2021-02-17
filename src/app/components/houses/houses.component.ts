@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ApartamentServices } from 'src/app/services/apartament.services';
+import { ApartamentServices } from 'src/app/services/apartament.service';
 
 @Component({
   selector: 'houses',
   templateUrl: './houses.component.html',
-  styleUrls: ['./houses.component.css']
+  styleUrls: ['./houses.component.css'],
 })
 export class HousesComponent implements OnInit {
-  title: "Imóveis";
+  title: 'Imóveis';
   apartamentos;
-  
 
-  constructor( service: ApartamentServices) { 
-
-        this.apartamentos = service.getApartament();
+  constructor(private service: ApartamentServices) {
+    //this.apartamentos = service.search();
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
