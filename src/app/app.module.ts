@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,6 +31,9 @@ import { ApartamentServices } from './services/apartament.services';
     RouterModule.forRoot(AppRoutes),
     AppRoutingModule,
     MatGridListModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatCardModule,
   ],
   providers: [ApartamentServices],
