@@ -6,5 +6,5 @@ import { VisitComponent } from './components/visit/visit.component';
 export const AppRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'novoRegistro', component: RegistrarComponent },
-  { path: 'marcarVisita', component: VisitComponent },
+  { path: 'marcarVisita/:id', component: VisitComponent },
 ];

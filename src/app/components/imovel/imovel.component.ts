@@ -3,16 +3,14 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'imovel',
   templateUrl: './imovel.component.html',
-  styleUrls: ['./imovel.component.css']
+  styleUrls: ['./imovel.component.css'],
 })
 export class ImovelComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  
+  @Input() id = 0;
   @Input() name = '';
   @Input() adress = '';
   @Input() photoUrl = '';
@@ -21,12 +19,10 @@ export class ImovelComponent implements OnInit {
   @Input() n_quartos = '';
   @Input() n_suites = '';
   @Input() n_salas = '';
-  @Input() description = ''; 
-  @Input() vagas = '';  
+  @Input() description = '';
+  @Input() vagas = '';
   @Input() area = '';
   @Input() armarioEmbutido = '';
 
   @Input() aluguel = '';
-
-
 }

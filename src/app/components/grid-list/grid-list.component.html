@@ -1,10 +1,10 @@
-<div class="row">
+<div class="row" *ngIf="homes">
   <imovel
     class="col-sm-12 col-md-4 margin-card"
-    *ngFor="let tile of hehe"
-    [name]="tile"
+    *ngFor="let home of homes"
+    [name]="home.id"
     photoUrl="https://via.placeholder.com/150"
-    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum tortor vel tortor commodo rhoncus. Nunc eget ultricies dolor. Donec sed nulla id metus euismod condimentum. Donec maximus hendrerit ipsum, id eleifend odio scelerisque sed. Nam viverra congue ornare. Aenean commodo placerat sollicitudin. Aenean finibus viverra eros eu convallis. Proin erat dolor, rutrum non tortor hendrerit, imperdiet iaculis ante. Suspendisse faucibus nisl eget suscipit ullamcorper. Maecenas ut pretium nunc. Suspendisse potenti."
-    adress="Lorem ipsum"
+    [description]="home.description"
+    [adress]="home.address.neighborhood.name"
   ></imovel>
 </div>

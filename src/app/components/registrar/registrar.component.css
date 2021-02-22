@@ -1,10 +1,3 @@
-.formulario{
-    background-color: #000000;
-    background-image: url(src\assets\images\bright-squares.png);
-    font-family:'minefont';
-    color:white;
-}
-
 .btn_enviar{
     background: #999 url('https://i.ibb.co/rb2TWXL/bgbtn.png') center / cover;
 	image-rendering: pixelated;

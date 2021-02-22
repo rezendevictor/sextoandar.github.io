@@ -53,3 +53,10 @@ nav ul li a:focus {
   display: flex;
   justify-content: center;
 }
+
+.formulario{
+  background-color: #000000;
+  background-image: url(src\assets\images\bright-squares.png);
+  font-family:'minefont';
+  color:white;
+}

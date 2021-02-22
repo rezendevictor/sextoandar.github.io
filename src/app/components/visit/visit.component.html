@@ -1,1 +1,14 @@
-<p>visit works!</p>
+<div class="formulario">
+  <h1 class="ml-3 mr-3">Marcar visita</h1>
+  <div class="row ml-3 mr-3 mt-3" [formGroup]="form" *ngIf="form">
+    <div class="form-group col-sm-12 col-md-6">
+        <label for="date">Data</label>
+        <input type="datetime-local" id="date" name="date" class="form-control" formControlName="date"/>
+      </div>
+  </div>
+  <div class="row justify-content-center">
+    <button mat-button class="btn_enviar col-sm-8 col-md-4" (click)="submit()">
+      MARCAR
+    </button>
+  </div>
+</div>

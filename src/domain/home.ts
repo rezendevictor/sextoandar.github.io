@@ -8,7 +8,7 @@ export class Home extends BaseEntity {
   parkingSpots: number;
   size: number;
   hasCloset: boolean;
-  description?: string;
+  description: string;
   rent: number;
   addressId: number;
   address: Address;

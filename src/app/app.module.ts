@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -14,6 +15,7 @@ import { ImovelComponent } from './components/imovel/imovel.component';
 import { RegistrarComponent } from './components/registrar/registrar.component';
 import { VisitComponent } from './components/visit/visit.component';
 import { AppRoutes } from './routes';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,7 @@ import { AppRoutes } from './routes';
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
+    HttpClientModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
