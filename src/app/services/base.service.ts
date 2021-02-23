@@ -1,7 +1,7 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const API_SERVER_ROUTE = '';
+const API_SERVER_ROUTE = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root',
@@ -9,10 +9,10 @@ const API_SERVER_ROUTE = '';
 export abstract class BaseHttpService {
   constructor() {}
 
-  getRoute(key: string, action: string = null) {
-    return action
-      ? `${API_SERVER_ROUTE}/${key}/${action}`
-      : `${API_SERVER_ROUTE}/${key}`;
+  getRoute(action: string, key: string = null) {
+    return key
+      ? `${API_SERVER_ROUTE}/${action}/${key}`
+      : `${API_SERVER_ROUTE}/${action}`;
   }
   /**
    * Configura os cabe�alhos da requisi��o GET.

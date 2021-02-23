@@ -12,11 +12,11 @@ export class ApartamentServices extends BaseHttpService {
   }
 
   get(id: number) {
-    return this.http.get<Apartment>(this.getRoute('apartment', id.toString()));
+    return this.http.get<Apartment>(this.getRoute('property/getPropertyById', id.toString()));
   }
 
   search() {
-    return this.http.get<Apartment[]>(this.getRoute('apartment'), {
+    return this.http.get<any>(this.getRoute('property/getProperty'), {
       headers: this.configureGetHttpHeaders(),
     });
   }

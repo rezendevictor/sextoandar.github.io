@@ -25,4 +25,6 @@ export class ImovelComponent implements OnInit {
   @Input() armarioEmbutido = '';
 
   @Input() aluguel = '';
+
+  @Input() homeObject = null
 }

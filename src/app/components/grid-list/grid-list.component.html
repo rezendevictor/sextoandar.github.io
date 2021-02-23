@@ -2,9 +2,6 @@
   <imovel
     class="col-sm-12 col-md-4 margin-card"
     *ngFor="let home of homes"
-    [name]="home.id"
-    photoUrl="https://via.placeholder.com/150"
-    [description]="home.description"
-    [adress]="home.address.neighborhood.name"
+    [homeObject]="home"
   ></imovel>
 </div>

@@ -2,14 +2,13 @@ import { Address } from './address';
 import { BaseEntity } from './baseEntity';
 
 export class Home extends BaseEntity {
-  bedrooms: number;
+  rooms: number;
   suites: number;
-  livingRooms: number;
-  parkingSpots: number;
-  size: number;
-  hasCloset: boolean;
+  living_rooms: number;
+  garage_spots: number;
+  area: number;
+  cabinet: boolean;
   description: string;
-  rent: number;
-  addressId: number;
+  rent_value: number;
   address: Address;
 }
