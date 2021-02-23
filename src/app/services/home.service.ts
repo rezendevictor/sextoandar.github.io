@@ -31,8 +31,8 @@ export class HomeServices extends BaseHttpService {
     );
   }
 
-  insert(home: Home) {
-    return this.http.post<number>(this.getRoute('apartment'), home, {
+  public insert(home: Home) {
+    return this.http.post<any>(this.getRoute('property', 'register'), home, {
       headers: this.configurePostHttpHeaders(),
     });
   }
