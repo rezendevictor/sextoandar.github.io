@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ApartamentServices } from '../../services/apartament.service';
+import { VisitServices } from '../../services/visit.service';
 
 @Component({
   selector: 'app-visit',
@@ -13,17 +14,20 @@ export class VisitComponent implements OnInit {
   id: string;
   form: FormGroup;
   unavailableDates: Date[] = [];
+  date = new FormControl(); 
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private apartamentService: ApartamentServices
+    private apartamentService: ApartamentServices,
+    private visitService: VisitServices
   ) {
     this.form = this.formBuilder.group({
       id: [''],
       date: [''],
-      houseId: [''],
+      propertyID: [''],
+      visitorCPF: [''],
     });
   }
   myFilter = (d: Date | null): boolean => {
@@ -36,6 +40,7 @@ export class VisitComponent implements OnInit {
   readonly getRouteId = {
     next: (params) => {
       this.id = params['id'];
+      console.log(this.id)
       this.getResourceDetails(this.id);
     },
   };
@@ -48,22 +53,29 @@ export class VisitComponent implements OnInit {
         return d;
       });
     });
-  }
+  };
+
 
   ngOnInit(): void {
     this.route.params.subscribe(this.getRouteId);
   }
 
   submit() {
+    this.form.get("id").setValue(Math.random() + this.id)
+    this.form.get("propertyID").setValue(this.id)
+    this.form.get("date").setValue(this.date.value)
     if (this.form.valid) {
-      console.log(this.form);
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Visita cadastrada',
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      this.visitService.insert(this.form.value).subscribe((res) => {
+        console.log('res', JSON.stringify(res));
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Visita cadastrada',
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      
     }
   }
 }
