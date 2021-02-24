@@ -10,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class VisitComponent implements OnInit {
   id: number;
   form: FormGroup;
-  time = { hour: 13, minute: 30 };
 
   constructor(
     private router: Router,
@@ -23,6 +22,11 @@ export class VisitComponent implements OnInit {
       houseId: [''],
     });
   }
+  myFilter = (d: Date | null): boolean => {
+    const day = (d || new Date()).getDay();
+    // Prevent Saturday and Sunday from being selected.
+    return day !== 0 && day !== 6;
+  };
 
   readonly getRouteId = {
     next: (params) => {

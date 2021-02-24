@@ -2,9 +2,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackgroundComponent } from './components/background/background.component';
@@ -29,6 +34,7 @@ import { AppRoutes } from './routes';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     AppRoutingModule,
     MatGridListModule,
@@ -37,6 +43,10 @@ import { AppRoutes } from './routes';
     ReactiveFormsModule,
     MatCardModule,
     HttpClientModule,
+    SweetAlert2Module.forRoot(),
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
