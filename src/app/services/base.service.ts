@@ -15,7 +15,7 @@ export abstract class BaseHttpService {
       : `${API_SERVER_ROUTE}/${action}`;
   }
   /**
-   * Configura os cabe�alhos da requisi��o GET.
+   * Configura os cabecalhos da requisisao GET.
    **/
   configureGetHttpHeaders(contentType = 'application/json'): HttpHeaders {
     return new HttpHeaders({

@@ -12,25 +12,24 @@ export class RegistrarComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       id: ['', []],
-      bedrooms: ['', [Validators.required]],
+      ownerID: ['', [Validators.required]],
+      rooms: ['', [Validators.required]],
       suites: ['', [Validators.required]],
-      livingRooms: ['', [Validators.required]],
-      parkingSpots: ['', [Validators.required]],
-      size: ['', [Validators.required]],
-      hasCloset: ['', [Validators.required]],
+      living_rooms: ['', [Validators.required]],
+      garage_spots: ['', [Validators.required]],
+      area: ['', [Validators.required]],
+      cabinet: ['', [Validators.required]],
       description: ['', []],
-      rent: ['', [Validators.required]],
-      addressId: ['', []],
+      rent_value: ['', [Validators.required]],
       address: this.formBuilder.group({
         id: ['', []],
         street: ['', [Validators.required]],
         number: ['', [Validators.required]],
-        postalCode: ['', [Validators.required]],
-        neighborhoodId: ['', []],
-        neighborhood: this.formBuilder.group({
-          id: ['', []],
-          name: ['', [Validators.required]],
-        }),
+        state: ['', [Validators.required]],
+        city: ['', [Validators.required]],
+        complement: ['', [Validators.required]],
+        reference: ['', [Validators.required]],
+        neighborhood: ['', [Validators.required]],
       }),
     });
   }
