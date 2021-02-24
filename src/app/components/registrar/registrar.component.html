@@ -19,25 +19,17 @@
       </div>
       <div class="form-group col-sm-6 col-md-4">
         <label for="cep">CEP</label>
-        <input type="text" id="cep" class="form-control" formControlName="postalCode"/>
+        <input type="text" id="cep" class="form-control" formControlName="complement"/>
       </div>
-      <div class="form-group col-sm-12 col-md-6" [formGroup]="neighborhood">
+      <div class="form-group col-sm-12 col-md-6">
         <label>Bairro</label>
-        <select id="neighborhood" name="neighborhood" class="form-control" formControlName="name">
-          <option value="">Selecione um bairro</option>
-          <option value="1">Bairro Zika 123</option>
-          <option value="2">Bairro Zika 123</option>
-          <option value="3">Bairro Zika 123</option>
-          <option value="4">Bairro Zika 123</option>
-          <option value="5">Bairro Zika 123</option>
-          <option value="6">Bairro Zika 123</option>
-        </select>
+        <input type="text" id="neighborhood" class="form-control" formControlName="reference"/>
       </div>
     </div>
 
     <div class="form-group col-3">
       <label for="quartos">Quantos quartos?</label>
-      <select id="quartos" name="quartos" class="form-control" formControlName="bedrooms">
+      <select id="quartos" name="quartos" class="form-control" formControlName="rooms">
         <option value="">Selecione</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -61,7 +53,7 @@
     </div>
     <div class="form-group col-3">
       <label for="salas">Quantas salas?</label>
-      <select id="salas" name="salas" class="form-control" formControlName="livingRooms">
+      <select id="salas" name="salas" class="form-control" formControlName="living_rooms">
         <option value="">Selecione</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -74,7 +66,7 @@
 
     <div class="form-group col-3">
       <label for="vagas">Quantas vagas na garagem?</label>
-      <select id="vagas" name="vagas" class="form-control" formControlName="parkingSpots">
+      <select id="vagas" name="vagas" class="form-control" formControlName="garage_spots">
         <option value="">Selecione</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -104,7 +96,7 @@
           name="naoArmario"
           value="false"
           class="form-check-input"
-          formControlName="hasCloset"
+          formControlName="cabinet"
         />
         <label for="apartamento" class="form-check-label"> Não</label>
       </div>

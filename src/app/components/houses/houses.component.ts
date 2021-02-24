@@ -11,7 +11,7 @@ export class HousesComponent implements OnInit {
   apartamentos;
 
   constructor(private service: ApartamentServices) {
-    //this.apartamentos = service.search();
+    this.apartamentos = service.search();
   }
 
   ngOnInit(): void {}
