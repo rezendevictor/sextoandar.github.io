@@ -1,7 +1,8 @@
-import { Swal } from 'sweetalert2';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HomeServices } from '../../services/home.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'registrarForm',
