@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'registrarForm',
@@ -40,6 +41,13 @@ export class RegistrarComponent implements OnInit {
   }
   submit() {
     console.log(this.form);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 1500,
+    });
     if (this.form.valid) return;
   }
 
