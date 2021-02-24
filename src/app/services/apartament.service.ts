@@ -11,7 +11,7 @@ export class ApartamentServices extends BaseHttpService {
     super();
   }
 
-  get(id: number) {
+  get(id: string) {
     return this.http.get<Apartment>(this.getRoute('property/getPropertyById', id.toString()));
   }
 

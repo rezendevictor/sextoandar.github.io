@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import {HouseServices} from "../../services/house.service";
+import {House} from "../../../domain/house";
+import {Observable} from "rxjs";
+import {ApartamentServices} from "../../services/apartament.service";
 
 @Component({
   selector: 'app-visit',
@@ -8,13 +12,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./visit.component.css'],
 })
 export class VisitComponent implements OnInit {
-  id: number;
+  id: string;
   form: FormGroup;
+  unavailableDates: Date[] = [];
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private apartamentService: ApartamentServices,
   ) {
     this.form = this.formBuilder.group({
       id: [''],
@@ -23,19 +29,28 @@ export class VisitComponent implements OnInit {
     });
   }
   myFilter = (d: Date | null): boolean => {
-    const day = (d || new Date()).getDay();
-    // Prevent Saturday and Sunday from being selected.
-    return day !== 0 && day !== 6;
+    const existingDates = this.unavailableDates.filter(unavailable => unavailable.getTime() == d.getTime());
+    return existingDates.length == 0;
   };
 
   readonly getRouteId = {
     next: (params) => {
-      this.id = +params['id'];
+      this.id = params['id'];
       this.getResourceDetails(this.id);
     },
   };
 
-  getResourceDetails(id: number) {}
+  getResourceDetails(id: string) {
+    this.apartamentService.get(id).subscribe((houseResponse: any) => {
+      this.unavailableDates = houseResponse.data.nonAvailable.map((data) => {
+        const d = new Date(data);
+        d.setHours(0,0,0,0);
+        return d;
+      });
+    });
+
+
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe(this.getRouteId);

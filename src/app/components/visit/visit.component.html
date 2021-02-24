@@ -2,24 +2,14 @@
   <h1 class="ml-3 mr-3">Marcar visita</h1>
   <div class="row ml-3 mr-3 mt-3" [formGroup]="form" *ngIf="form">
     <div class="form-group col-sm-12 col-md-6">
-      <label for="date">Data</label>
+      <label>Escolha uma data</label>
       <input
-        type="date"
-        id="date"
-        name="date"
         class="form-control"
-        formControlName="date"
-        [datesDisabled]="['2021-01-01']"
-      />
-    </div>
-    <div class="form-group col-sm-12 col-md-6">
-      <label>Choose a date</label>
-      <input
         matInput
         [matDatepickerFilter]="myFilter"
         [matDatepicker]="picker"
       />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker-toggle matSuffix [for]="picker" style="background-color: #fff; padding: 10px; border-radius: 10px"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </div>
   </div>
