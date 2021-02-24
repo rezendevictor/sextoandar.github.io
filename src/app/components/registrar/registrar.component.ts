@@ -48,15 +48,16 @@ export class RegistrarComponent implements OnInit {
       area: ['', [Validators.required]],
       cabinet: ['', [Validators.required]],
       description: ['', []],
+      is_apartament: ['',[]],
       rent_value: ['', [Validators.required]],
       address: this.formBuilder.group({
         id: ['', []],
         street: ['', [Validators.required]],
         number: ['', [Validators.required]],
-        state: ['', [Validators.required]],
-        city: ['', [Validators.required]],
+        state: ['Minas Gerais', [Validators.required]],
+        city: ['Belo Horizonte', [Validators.required]],
         complement: ['', [Validators.required]],
-        reference: ['', [Validators.required]],
+        reference: ['', []],
         neighborhood: ['', [Validators.required]],
       }),
     });
@@ -66,8 +67,8 @@ export class RegistrarComponent implements OnInit {
     console.log('teste');
   }
   submit() {
+    this.form.get("ownerID").setValue(Math.random()+'caiubi')
     console.log(this.form);
-
     if (this.form.valid) {
       const response = this.homeServices
         .insert(this.form.value)
