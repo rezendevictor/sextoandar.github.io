@@ -1,8 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HomeServices } from '../../services/home.service';
 import Swal from 'sweetalert2';
+import { HomeServices } from '../../services/home.service';
 
 @Component({
   selector: 'registrarForm',
@@ -40,7 +39,6 @@ export class RegistrarComponent implements OnInit {
     };
 
     this.form = this.formBuilder.group({
-
       id: ['', []],
       ownerID: ['', [Validators.required]],
       rooms: ['', [Validators.required]],
@@ -60,7 +58,6 @@ export class RegistrarComponent implements OnInit {
         complement: ['', [Validators.required]],
         reference: ['', [Validators.required]],
         neighborhood: ['', [Validators.required]],
-
       }),
     });
   }
@@ -70,18 +67,19 @@ export class RegistrarComponent implements OnInit {
   }
   submit() {
     console.log(this.form);
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your work has been saved',
-      showConfirmButton: false,
-      timer: 1500,
-    });
+
     if (this.form.valid) {
       const response = this.homeServices
         .insert(this.form.value)
         .subscribe((res) => {
           console.log('res', JSON.stringify(res));
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Imóvel cadastrado',
+            showConfirmButton: false,
+            timer: 1500,
+          });
         });
       console.log(response);
     }

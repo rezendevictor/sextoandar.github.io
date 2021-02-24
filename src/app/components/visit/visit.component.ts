@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import {HouseServices} from "../../services/house.service";
-import {House} from "../../../domain/house";
-import {Observable} from "rxjs";
-import {ApartamentServices} from "../../services/apartament.service";
+import Swal from 'sweetalert2';
+import { ApartamentServices } from '../../services/apartament.service';
 
 @Component({
   selector: 'app-visit',
@@ -20,7 +18,7 @@ export class VisitComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private apartamentService: ApartamentServices,
+    private apartamentService: ApartamentServices
   ) {
     this.form = this.formBuilder.group({
       id: [''],
@@ -29,7 +27,9 @@ export class VisitComponent implements OnInit {
     });
   }
   myFilter = (d: Date | null): boolean => {
-    const existingDates = this.unavailableDates.filter(unavailable => unavailable.getTime() == d.getTime());
+    const existingDates = this.unavailableDates.filter(
+      (unavailable) => unavailable.getTime() == d.getTime()
+    );
     return existingDates.length == 0;
   };
 
@@ -44,12 +44,10 @@ export class VisitComponent implements OnInit {
     this.apartamentService.get(id).subscribe((houseResponse: any) => {
       this.unavailableDates = houseResponse.data.nonAvailable.map((data) => {
         const d = new Date(data);
-        d.setHours(0,0,0,0);
+        d.setHours(0, 0, 0, 0);
         return d;
       });
     });
-
-
   }
 
   ngOnInit(): void {
@@ -57,6 +55,15 @@ export class VisitComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.valid) console.log(this.form);
+    if (this.form.valid) {
+      console.log(this.form);
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Visita cadastrada',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
   }
 }
